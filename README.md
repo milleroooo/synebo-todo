@@ -28,6 +28,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 https://synebo-todo.web.app
 
+## Photos
+
+<img width="1453" alt="Zrzut ekranu 2024-07-31 o 14 19 46" src="https://github.com/user-attachments/assets/21c46940-f5db-4820-94b4-2aeb33f19ea2">
+<img width="1453" alt="Zrzut ekranu 2024-07-31 o 14 20 44" src="https://github.com/user-attachments/assets/8b709bd7-9284-48d0-a0e2-d5f8efd9eaa7">
+<img width="363" alt="Zrzut ekranu 2024-07-31 o 14 21 54" src="https://github.com/user-attachments/assets/91b16ba8-669b-46b6-af1a-55ee8dfe30d8">
+<img width="363" alt="Zrzut ekranu 2024-07-31 o 14 22 05" src="https://github.com/user-attachments/assets/2f3ecd88-bb47-4d8c-b32e-d720b13fb2b0">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
