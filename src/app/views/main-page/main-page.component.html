@@ -1,0 +1,17 @@
+<div class="main-page">
+	<img class="main-page__image" [src]="getProperImage()" />
+	<div class="main-page__content">
+		<div class="main-page__content--header">
+			<div class="main-page__content--header--title">TODO</div>
+			<div class="main-page__content--header--action">
+				<img
+					class="main-page__image"
+					[src]="getProperIcon()"
+					(click)="toggleDarkMode()"
+				/>
+			</div>
+		</div>
+		<app-todo-list [mobileView]="isMobile" [darkMode]="isDarkMode">
+		</app-todo-list>
+	</div>
+</div>

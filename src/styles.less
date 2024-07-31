@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables.less';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	font-size: 62.5%;
+
+	@media (max-width: 75em) {
+		font-size: 56.25%;
+	}
+
+	@media (max-width: 56.25em) {
+		font-size: 50%;
+	}
+
+	@media (min-width: 112.5em) {
+		font-size: 75%;
+	}
+}
+
+body {
+	font-size: 1.4rem;
+	font-family: 'Josefin Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+::ng-deep .mat-mdc-snack-bar-container {
+	margin: 8px;
+	color: white;
+	position: absolute !important;
+}

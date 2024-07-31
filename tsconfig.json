@@ -1,33 +1,53 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+	"compileOnSave": false,
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"baseUrl": "./",
+		"outDir": "./dist/out-tsc",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "ES2022",
+		"module": "ES2022",
+		"useDefineForClassFields": false,
+		"lib": ["ES2022", "dom"],
+		"paths": {
+			"@app/*": ["./src/app/*"],
+			"@consts/*": ["./src/app/consts/*"],
+			"@pipes/*": ["./src/app/pipes/*"],
+			"@models/*": ["./src/app/models/*"],
+			"@utils/*": ["./src/app/utils/*"],
+			"@enums/*": ["./src/app/enums/*"],
+			"@animations/*": ["./src/app/animations/*"],
+			"@kzm-module/*": ["./src/app/kzm-modules/*"],
+			"@material/*": ["./src/app/material/*"],
+			"@translate-child-module/*": ["./src/app/translate-module/*"],
+			"@shared/*": ["./src/app/shared/*"],
+			"@views/*": ["./src/app/views/*"],
+			"@components/*": ["./src/app/components/*"],
+			"@validators/*": ["./src/app/validators/*"],
+			"@guard/*": ["./src/app/guard/*"],
+			"@env/*": ["./src/environments/*"],
+			"@services/*": ["./src/app/services/*"],
+			"@helpers/*": ["./src/app/helpers/*"],
+			"@resolvers/*": ["./src/app/resolvers/*"],
+			"@testing/*": ["./src/app/testing/*"]
+		}
+	},
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true
+	}
 }

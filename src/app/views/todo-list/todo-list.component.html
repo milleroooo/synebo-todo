@@ -1,0 +1,123 @@
+<div class="container">
+	<div class="container__form">
+		<form [formGroup]="formGroup">
+			<mat-form-field class="field-width">
+				<input
+					type="text"
+					matInput
+					formControlName="name"
+					placeholder="Create a new todo..."
+				/>
+			</mat-form-field>
+			<button
+				mat-fab
+				class="container__form--button"
+				color="accent"
+				[disabled]="isLoading"
+				(click)="onAddTask()"
+			>
+				<mat-icon>add</mat-icon>
+			</button>
+		</form>
+	</div>
+	<div
+		class="container__task-list"
+		cdkDropList
+		(cdkDropListDropped)="onDropTask($event)"
+	>
+		<div class="container__task-list__content">
+			<div
+				class="container__task-list__content__task"
+				*ngFor="let task of tasks"
+				(mouseenter)="showCloseIcon(task, true)"
+				(mouseleave)="showCloseIcon(task, false)"
+				cdkDrag
+			>
+				<div class="container__task-list__content__task__checkbox">
+					<input
+						type="checkbox"
+						id="task-{{ task.id }}"
+						[checked]="task.completed"
+						(change)="onUpdateTask(task)"
+					/>
+					<label
+						for="task-{{ task.id }}"
+						[class.completed]="task.completed"
+					>
+						<img *ngIf="task.completed" [src]="CHECK_ICON" />
+					</label>
+					<span
+						[class.completed]="task.completed"
+						[innerText]="task.name"
+					></span>
+				</div>
+				<img
+					*ngIf="task.showCloseIcon"
+					[src]="getProperCloseIcon()"
+					(click)="onDeleteTask(task)"
+				/>
+			</div>
+		</div>
+
+		<div class="container__task-list__filters">
+			<div class="container__task-list__filters--count">
+				<span [innerText]="remainingTasks() + ' items left'"></span>
+			</div>
+			<div
+				class="container__task-list__filters--main-filters"
+				*ngIf="!mobileView"
+			>
+				<span
+					(click)="showAll()"
+					[ngClass]="{ active: isAllFilter }"
+					class="filter"
+				>
+					All
+				</span>
+				<span
+					(click)="showActive()"
+					[ngClass]="{ active: isActiveFilter }"
+					class="filter"
+				>
+					Active
+				</span>
+				<span
+					(click)="showCompleted()"
+					[ngClass]="{ active: isCompletedFilter }"
+					class="filter"
+				>
+					Completed
+				</span>
+			</div>
+			<div class="container__task-list__filters--complete-filter">
+				<span (click)="clearCompleted()">Clear completed</span>
+			</div>
+		</div>
+	</div>
+	<div class="container__mobile-filters" *ngIf="mobileView">
+		<div class="container__mobile-filters--main-filters">
+			<span
+				(click)="showAll()"
+				[ngClass]="{ active: isAllFilter }"
+				class="filter"
+			>
+				All
+			</span>
+			<span
+				(click)="showActive()"
+				[ngClass]="{ active: isActiveFilter }"
+				class="filter"
+			>
+				Active
+			</span>
+			<span
+				(click)="showCompleted()"
+				[ngClass]="{ active: isCompletedFilter }"
+				class="filter"
+			>
+				Completed
+			</span>
+		</div>
+	</div>
+	<div class="container__additional-info">Drag and drop to reorder list</div>
+</div>
