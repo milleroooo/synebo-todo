@@ -20,7 +20,7 @@ const SHARED_MODULES = [
 
 @NgModule({
 	imports: SHARED_MODULES,
-	exports: [...SHARED_MODULES] as any,
+	exports: [SHARED_MODULES],
 	providers: [TaskService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
 })
 export class SharedModule {}

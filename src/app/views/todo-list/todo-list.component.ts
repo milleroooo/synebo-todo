@@ -203,7 +203,14 @@ export class TodoListComponent {
 			this.isLoading = false;
 
 			this._loadFilterFromStorage();
+			this._setCloseState();
 		});
+	}
+
+	private _setCloseState(): void {
+		for (const task of this.tasks) {
+			task.showCloseIcon = false;
+		}
 	}
 
 	private _saveFilterInStorage(filter: string): void {
